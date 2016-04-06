@@ -1,0 +1,47 @@
+A robot has been programmed tofollow the instructions in its path. Instructions for the next direction therobot is to move are laid down in a grid. The possible instructions are
+
+N north(up the page)
+S south (down the page)
+E east (to the right on the page)
+W west (to the left on the page)
+?
+
+Figure Here
+
+For example, suppose the robotstarts on the north (top) side of Grid 1 and starts south (down). The path therobot follows is shown. The robot goes through 10 instructions in the gridbefore leaving the grid.
+
+Compare what happens in Grid 2: therobot goes through 3 instructions only once, and then starts a loop through 8instructions, and never exits.
+
+You are to write a program thatdetermines how long it takes a robot to get out of the grid or how the robotloops around.
+
+There will be one or more grids forrobots to navigate. The data for each is in the following form. On the firstline are three integers separated by blanks: the number of rows in the grid,the number of columns in the grid, and the number of the column in which therobot enters from the north. The possible entry columns are numbered startingwith one at the left. Then come the rows of the direction instructions. Eachgrid will have at least one and at most 10 rows and columns of instructions.The lines of instructions contain only the characters N, S,E, or W with no blanks. The end of input is indicated by a rowcontaining 0 0 0.
+
+For each grid in the input there isone line of output. Either the robot follows a certain number of instructionsand exits the grid on any one the four sides or else the robot follows theinstructions on a certain number of locations once, and then the instructionson some number of locations repeatedly. The sample input below corresponds tothe two grids above and illustrates the two forms of output. The word"step" is always immediately followed by "(s)" whether ornot the number before it is 1.
+
+Example input:
+
+36 5
+
+NEESWE
+
+WWWESS
+
+SNWWWW
+
+45 1
+
+SESWE
+
+EESNW
+
+NWEEN
+
+EWSEN
+
+00 0
+
+Example output:
+
+10step(s) to exit
+
+3step(s) before a loop of 8 step(s) 
