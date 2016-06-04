@@ -13,7 +13,7 @@ int Visited[SIZE][SIZE];
 int N, T;
 int Ans;
 
-void readCase(){
+void readCase469(){
     N = 0;
     while(gets(Graph[N])){
         if(Graph[N][0] != 'W' && Graph[N][0] != 'L')
@@ -31,28 +31,28 @@ void resetVisited(){
             Visited[i][j] = 0;
 }
 
-void fill(int x, int y){
+void fill469(int x, int y){
     Visited[x][y] = 1;
     Ans++;
     if(x - 1 >= 0 && y - 1 >= 0 && Graph[x - 1][y - 1] == 'W' && !Visited[x - 1][y - 1])
-        fill(x -1, y - 1);
+        fill469(x -1, y - 1);
     if(x - 1 >= 0 && Graph[x - 1][y] == 'W' && !Visited[x -1][y])
-        fill(x - 1, y);
+        fill469(x - 1, y);
     if(x - 1 >= 0 && y + 1 < N && Graph[x - 1][y + 1] == 'W' && !Visited[x - 1][y + 1])
-        fill(x -1, y + 1);
+        fill469(x -1, y + 1);
     if(y - 1 >= 0 && Graph[x][y - 1] == 'W' && !Visited[x][y - 1])
-        fill(x, y - 1);
+        fill469(x, y - 1);
     if(y + 1 < N && Graph[x][y + 1] == 'W' && !Visited[x][y + 1])
-        fill(x, y + 1);
+        fill469(x, y + 1);
     if(x + 1 < N && y - 1 >= 0 && Graph[x + 1][y - 1] == 'W' && !Visited[x + 1][y - 1])
-        fill(x + 1, y - 1);
+        fill469(x + 1, y - 1);
     if(x + 1 < N && Graph[x + 1][y] == 'W' && !Visited[x + 1][y])
-        fill(x + 1, y);
+        fill469(x + 1, y);
     if(x + 1 < N && Graph[x + 1][y + 1] == 'W' && !Visited[x + 1][y + 1])
-        fill(x + 1, y + 1);
+        fill469(x + 1, y + 1);
 }
 
-void solveCase(){
+void solve469(){
 
     resetVisited();
     int i, x, y;
@@ -69,12 +69,12 @@ void solveCase(){
     }
     x--;
     y--;
-    fill(x, y);
+    fill469(x, y);
     printf("%d", Ans);
 
 }
 
-void printCase(){
+void print469(){
     int i, j;
     for(i = 0; i < N; i++)
     {
@@ -91,9 +91,9 @@ int main(){
     getchar();
     getchar();
     while(T--){
-        readCase();
-//        printCase();
-        solveCase();
+        readCase469();
+//        print469();
+        solve469();
     }
     return 0;
 }

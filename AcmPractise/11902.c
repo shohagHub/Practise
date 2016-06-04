@@ -45,7 +45,8 @@ void fill(int i)
 
 void updateAns(int i)
 {
-     int j;
-     for (j=0; j<N; j++) {
-          if (fused[j] && !used[j])
-              Ans[i][j] = 1;
+//     int j;
+//     for (j=0; j<N; j++) {
+//          if (fused[j] && !used[j])
+//              Ans[i][j] = 1;
+     }

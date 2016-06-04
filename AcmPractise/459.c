@@ -23,7 +23,7 @@ void initCase(){
         visited[i] = 0;
 }
 
-void readCase(){
+void readCase459(){
     int x, y;
 //    gets(st);
     scanf("%s", st);
@@ -48,7 +48,7 @@ void dfs(int node){
             dfs(i);
 }
 
-void solveCase(){
+void solve459(){
     int i;
     count = 0;
     for(i = 0; i < N; i++)
@@ -64,14 +64,14 @@ void printCase(){
         printf("\n");
 }
 
-int main(){
-    scanf("%d", &T);
-    getchar();
-    getchar();
-    while(T--){
-        readCase();
-        solveCase();
-        printCase();
-    }
-    return 0;
-}
+//int main(){
+//    scanf("%d", &T);
+//    getchar();
+//    getchar();
+//    while(T--){
+//        readCase459();
+//        solve459();
+//        printCase();
+//    }
+//    return 0;
+//}
