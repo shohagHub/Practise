@@ -86,14 +86,14 @@ void print469(){
 
 }
 
-int main(){
-    scanf("%d", &T);
-    getchar();
-    getchar();
-    while(T--){
-        readCase469();
-//        print469();
-        solve469();
-    }
-    return 0;
-}
+//int main(){
+//    scanf("%d", &T);
+//    getchar();
+//    getchar();
+//    while(T--){
+//        readCase469();
+////        print469();
+//        solve469();
+//    }
+//    return 0;
+//}
