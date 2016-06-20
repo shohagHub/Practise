@@ -1,77 +1,62 @@
-/*
- * 459.c
- *
- *  Created on: Oct 11, 2015
- *      Author: shohag
- */
-
-#include <stdio.h>
+#include<stdio.h>
 #define SIZE 27
 int T, N;
 char st[5];
-int Graph[SIZE][SIZE];
-int visited[SIZE];
-int count;
-
-
-void initCase(){
+int Path[SIZE][SIZE];
+int Visited[SIZE];
+int Count;
+void initCase() {
     int i, j;
-    for(i = 0; i < N; i++)
-        for(j = 0; j < N; j++)
-            Graph[i][j] = 0;
-    for(i = 0; i < N; i++)
-        visited[i] = 0;
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N; j++)
+            Path[i][j] = 0;
+    for (i = 0; i < N; i++)
+        Visited[i] = 0;
 }
-
-void readCase459(){
+void readCase() {
     int x, y;
-//    gets(st);
-    scanf("%s", st);
-
+    gets(st);
     N = st[0] - 'A' + 1;
     initCase();
-    while(1 == scanf("%s", st)){
-        if(st[0] == '\0')
+    while (gets(st)) {
+        if (st[0] == '\0')
             break;
         x = st[0] - 'A';
         y = st[1] - 'A';
-        Graph[x][y] = 1;
-        Graph[y][x] = 1;
+        Path[x][y] = 1;
+        Path[y][x] = 1;
     }
 }
-
-void dfs(int node){
+int fill(int x) {
     int i;
-    visited[node] = 1;
-    for(i = 0; i < N; i++)
-        if(Graph[node][i] && !visited[i])
-            dfs(i);
+    Visited[x] = 1;
+    for (i = 0; i < N; i++)
+        if (Path[x][i] && !Visited[i])
+            fill(i);
 }
-
-void solve459(){
+void solveCase()
+{
     int i;
-    count = 0;
-    for(i = 0; i < N; i++)
-        if(!visited[i]){
-            count++;
-            dfs(i);
-        }
+    Count = 0;
+    for (i=0;i<N; i++) if (!Visited[i]) {
+        Count++;
+        fill(i);
+    }
 }
-
-void printCase(){
-    printf("%d\n", count);
-    if(T)
-        printf("\n");
+void printCase()
+{
+    printf("%d\n",Count);
+    if (T)
+    printf("\n");
 }
-
-//int main(){
-//    scanf("%d", &T);
-//    getchar();
-//    getchar();
-//    while(T--){
-//        readCase459();
-//        solve459();
-//        printCase();
-//    }
-//    return 0;
-//}
+int main() {
+    scanf("%d", &T);
+    getchar();
+    getchar();
+    while (T--) {
+        readCase();
+        solveCase();
+        printCase();
+    }
+    return 0;
+}
