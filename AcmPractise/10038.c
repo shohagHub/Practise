@@ -31,14 +31,14 @@ int solve(){
 }
 
 int main(){
-	freopen("10038.txt", "r", stdin);
-	while(scanf("%d", &N)){
+	/*freopen("10038.txt", "r", stdin);*/
+	while(scanf("%d", &N) == 1){
 
 		int i;
 		for(i = 0; i < N; i++){
 			scanf("%d", &input[i]);
 		}
-		if(solve())
+		if(solve() == 1)
 			printf("Jolly\n");
 		else
 			printf("Not jolly\n");
